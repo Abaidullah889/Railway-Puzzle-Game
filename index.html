@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6aa8f0cd38.js" crossorigin="anonymous"></script>
+    <audio id="background-music" src="background-sound.mp3" loop autoplay></audio>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--Menu-->
+    <div class="container" >
+        <h1 class="title">RAILWAYS</h1>
+        <form class="login-form">
+            <input type="text" id="username" placeholder="WHO ARE YOU?" class="input-box" required >
+            
+            <div class="Menu">
+
+                <div class="difficulty">
+
+                    <div class="difficulty-line">
+                        <p>SET THE DIFFICULTY!</p>
+                    </div>
+                    <div class="difficulty-buttons">
+                        <button type="button" class="difficulty-btn" id="easy-btn">5 x 5  (Easy)</button>
+                        <button type="button" class="difficulty-btn" id="hard-btn">7 x 7  (Hard)</button>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="button" class="action-btn">Rules</button>
+                    <button type="button" class="start-btn" disabled>Start Game</button>
+                    <button type="button" id="Leaderboard" class="action-btn">Leaderboard</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Rules Container -->
+    <div class="rules-container hidden" >
+        
+
+        <h2 class="rules-title">Game Rules</h2>
+        <ul class="rules-text">
+
+            <li>The base of the map is a <strong>5x5 (Easy)</strong> or <strong>7x7 (Hard)</strong> square grid, depending on the selected difficulty.</li>
+            <li>The maps contain different numbers of:
+                <ul>
+                    <li> Mountains</li>
+                    <li> Bridges</li>
+                    <li> Oases</li>
+                    <li> Empty tiles</li>
+                </ul>
+            </li>
+            <li>No specific requirements for placing railway elements exist, allowing for flexible gameplay.</li>
+        </ul>
+
+        <ul class="rules-text">
+            <li><strong>Clicking on Cells</strong>: Clicking on a cell cycles through the different element types, with options to rotate or delete using the right mouse button.</li>
+            <li><strong>Element Selection</strong>: After selecting a tile, elements can be chosen from a palette or switched between elements using the arrow keys.</li>
+            <li><strong>Drag and Drop</strong>: Elements can be dragged and dropped onto a tile from a palette.</li>
+            <li><strong>Drawing Railway Lines</strong>: The railway line is drawn by holding down the mouse button and moving across the cells (bonus points for this feature).</li>
+        </ul>
+
+        <ul class="rules-text">
+            <li>The game ends when the player correctly completes the puzzle according to the given rules.</li>
+            <ul>
+                <li>Each cell must have <strong>two exit points</strong>, allowing the train to enter each neighboring cell from the correct direction.</li>
+                <li>Every cell that needs to be touched <strong>must be touched</strong>.</li>
+                <li>Every cell where no track can be placed <strong>remains empty</strong>.</li>
+            </ul>
+        </ul>
+
+        <div class="last_line">
+            <button class="back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="back-icon">
+                    <path fill="currentColor" d="M19 13H6.83l5.88-5.88L10.29 5.29 3.41 12l6.88 6.71 1.41-1.41L6.83 13H19v-2z"/>
+                </svg>
+                Back
+            </button>
+    
+        </div>
+        
+        
+    </div>
+
+    <!-- Game Screen -->
+    <div class="game-screen hidden" >
+
+        <header class="header-container">
+
+            <h1 class="game_title">RAILWAYS</h1> 
+            <button class="restart-btn"><i class="fa-solid fa-rotate-right"></i></button>
+        
+        </header>
+        <div class="game-container">
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <p>Route Designer:</p>
+                <p class="designer-name">TRICKLES</p>
+                <div class="divider"></div>
+                <p>Elapsed Time:</p>
+                <p class="elapsed-time">00:00</p>
+            </div>
+            <!-- Game Board -->
+            <div class="game-board">
+                <table class="grid">
+                    <!-- You would dynamically generate these rows and cells based on the grid size -->
+                    <!-- Example for a 7x7 grid -->
+            
+                    
+            
+                    <!-- Repeat for other rows -->
+                </table>
+            </div>
+            <!-- Palette for Elements -->
+            <div class="palette">
+                <h3>Palette</h3>
+                <div class="palette-item" data-type="track" id="0">
+                  <img src="straight_rail.png" alt="Track">
+                </div>
+                <div class="palette-item" data-type="bridge_track" id="0">
+                  <img src="bridge_rail.png" alt="Bridge">
+                </div>
+                <div class="palette-item" data-type="mountain_curve">
+                  <img src="mountain_rail.png" alt="Mountain">
+                </div>
+                <div class="palette-item" data-type="curve" id="0">
+                  <img src="curve_rail.png" alt="Water">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win Screen Modal -->
+    <div class="win-screen hidden">
+        <div class="win-content">
+            <h2>Congratulations!</h2>
+            <p>You have completed the railway puzzle!</p>
+            <button class="playagain-btn">Play Again</button>
+        </div>
+
+    <!-- Rocket and Fireworks Animations -->
+    <div class="fireworks">
+        <!-- Multiple Rockets -->
+        <div class="rocket" id="rocket1"></div>
+        <div class="rocket" id="rocket2"></div>
+        <div class="rocket" id="rocket3"></div>
+        <div class="rocket" id="rocket4"></div>
+        <div class="rocket" id="rocket5"></div>
+
+        <!-- Multiple Fireworks -->
+        <div class="firework" id="firework1"></div>
+        <div class="firework" id="firework2"></div>
+        <div class="firework" id="firework3"></div>
+        <div class="firework" id="firework4"></div>
+        <div class="firework" id="firework5"></div>
+        <div class="firework" id="firework6"></div>
+        <div class="firework" id="firework7"></div>
+        <div class="firework" id="firework8"></div>
+    </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div class="leaderboard-container hidden">
+        <h2 class="leaderboard-title">🏆 Leaderboard 🏆</h2>
+        <ul class="leaderboard-list">
+        <!-- The list of winners will be dynamically generated here -->
+        </ul>
+        <button id="leaderboard-back-btn" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="back-icon">
+                <path fill="currentColor" d="M19 13H6.83l5.88-5.88L10.29 5.29 3.41 12l6.88 6.71 1.41-1.41L6.83 13H19v-2z"/>
+            </svg>
+            Back
+        </button>
+    </div>
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>

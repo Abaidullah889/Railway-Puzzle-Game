@@ -1,0 +1,746 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4e6;
+    background-image: url("straight_rail.png");
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    padding: 10%;
+    width: 100%;
+    margin: 20%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 5em;
+    color: #c5a05b;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family:Cinzel;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.input-box {
+    padding: 15px;
+    border: 2px solid #c5a05b;
+    border-radius: 8px;
+    font-family:Cinzel;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+
+.Menu{
+    
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* width: 100%; */
+}
+
+.difficulty {
+    font-size: 1em;
+    width: 80%;
+    color: #a9a9a9;
+    border: 4px solid #c5a05b;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.difficulty-line{
+    margin: 10px;
+}
+
+.difficulty-line p{
+    font-family:Cinzel;
+    color: #c5a05b;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    gap: 10px;
+    width: 100%;
+}
+
+.difficulty-btn {
+    padding: 15px;
+    border: 2px solid #c5a05b;
+    border-radius: 8px;
+    background-color: #e5e5cc;
+    font-size: 1em;
+    font-weight: bold;
+    font-family:Cinzel;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.difficulty-btn:hover {
+    background-color: #c5a05b;
+    color: white;
+}
+
+.difficulty-btn.selected {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.actions {
+    display: grid;
+    gap: 10px;
+    /* width: 100%; */
+    /* margin-top: 10px; */
+    /* border: 2px solid red; */
+}
+
+.action-btn, .start-btn {
+    padding: 15px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    border: none;
+    /* margin:2%; */
+    border-radius: 20px;
+    cursor: pointer;
+    font-family:Cinzel;
+    font-size: 1em;
+    /* flex: 1; */
+}
+
+.action-btn {
+    background-color: #e5e5cc;
+    border: 2px solid #a9a9a9;
+    transition: background-color 0.3s;
+}
+
+.start-btn {
+    background-color: #a9a9a9;
+    color: white;
+    border: 2px solid transparent;
+    
+}
+
+.action-btn:hover, .start-btn:hover {
+    background-color: #c5a05b;
+    color: white;
+}
+
+
+
+
+.rules-container {
+    background-color: rgba(255, 255, 255, 0.5); /* Same transparent background */
+    backdrop-filter: blur(50px); /* Same blur effect */
+    border-radius: 10px;
+    padding: 5%; /* Adjust padding */
+    margin: auto;
+    width: 100%;
+
+    text-align: top;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Same shadow effect */
+}
+
+.rules-title {
+    font-size: 2.5em; /* Responsive size */
+    text-align: left;
+    color: #c5a05b;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: Cinzel;
+}
+
+.rules-text {
+    font-size: 1em; /* Base font size */
+    color: #333;
+    font-family: Cinzel;
+    font-weight: bold;
+    line-height: 1.5; /* Improve readability */
+    list-style-type: disc; /* Use bullet points */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add padding for bullet points */
+}
+
+.rules-text ul {
+    margin-top: 10px; /* Space between main bullet and sub-bullets */
+    padding-left: 40px; /* Increase padding to indent the inner list */
+    margin-bottom: 10px;
+}
+
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px; /* Ample padding for a larger click area */
+    margin:auto;
+    border: none;
+    border-radius: 20px; /* More rounded corners for a modern look */
+    background-color: #c5a05b; /* Main background color */
+    color: white; /* Text color */
+    font-family: Cinzel, serif; /* Font style */
+    font-size: 1.2em; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 2px solid transparent; /* Transparent border to avoid shift on hover */
+}
+
+.back-btn:hover {
+    background-color: #a78d3e; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.back-icon {
+    width: 24px; /* Width of the icon */
+    height: 24px; /* Height of the icon */
+    margin-right: 0px; /* Space between icon and text */
+}
+
+
+.last_line{
+
+    display: flex;
+    justify-content: end;
+}
+
+
+
+
+
+
+
+
+/*--------------------------Game-Screnn-------------------------------------*/
+
+/* Game Screen */
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    border: 2px solid #6e491f;
+    background-color: #fffbe0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+
+/* Title */
+.game_title {
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    position: absolute;
+    left: 50%;
+    margin-bottom: 20px;
+    color: #a67c52;
+    transform: translateX(-50%);
+}
+
+
+.restart-btn {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #ff1a1a;
+}
+
+
+
+
+
+/* Game Container */
+.game-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/* Styling for the Info Panel */
+.info-panel {
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    border: 2px solid #d8c3a5; /* Light border to match the design */
+    text-align: center; /* Center align text */
+    font-family: 'Cinzel', serif; /* Matching the font family */
+    color: #333; /* Default text color */
+}
+
+/* General Text Style */
+.info-panel p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #6e491f; /* Darker shade for subtle contrast */
+    text-transform: uppercase; /* Making text uppercase for a uniform style */
+    font-weight: bold;
+}
+
+/* Styling for Specific Text */
+.info-panel .designer-name {
+    font-size: 1.5em; /* Larger font for emphasis */
+    font-weight: 700;
+    margin: 10px 0;
+    color: #302b27; /* Darker shade to make it pop */
+}
+
+.info-panel .elapsed-time {
+    font-size: 2em; /* Larger size for visual emphasis */
+    font-weight: 700;
+    margin-top: 5px;
+    color: #302b27; /* Same color as the designer name */
+}
+
+/* Adding a subtle divider */
+.info-panel .divider {
+    width: 80%; /* Relative width */
+    margin: 10px auto; /* Centered */
+    height: 1px; /* Thin line */
+    background-color: #d8c3a5; /* Soft color matching the border */
+}
+
+
+
+
+
+
+
+
+/* Game Board */
+.game-board {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #d8c3a5;
+    border-radius: 10px;
+}
+
+/* Table Grid */
+.grid 
+{
+    width: 100%;
+    border-collapse: collapse; /* Removes gaps between table cells */
+    border-spacing: 0; /* Ensures no space between cells */
+    border: none; /* Remove any outer borders */
+    padding: 0; /* No padding */
+    margin: 0; /* No margin */
+}
+
+/* Grid Cells */
+.cell 
+{
+    background-color: transparent; /* Optional: transparent background for a cleaner look */
+    aspect-ratio:1/ 1; /* Ensures cells are perfect squares */
+    padding: 0; /* No padding inside cells */
+    margin: 0;  /* No extra margin */
+    cursor: default; /* Normal cursor */
+    border: none; /* No borders between cells */
+    width: auto; /* Ensures cells adjust automatically */
+    height: auto;
+    overflow: hidden;
+}
+
+
+/* Images within Grid Cells */
+.cell img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
+}
+
+
+
+/* Palette */
+.palette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;  /* Adjusted to fit square buttons nicely */
+    background-color: #fff;
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    border: 2px solid #d8c3a5; /* Light border to match the design */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Cinzel', serif;
+  }
+  
+  .palette h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .palette-item {
+    width: 100px;    /* Square dimensions */
+    height: 100px;   /* Square dimensions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #eee685;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+  }
+  
+  .palette-item:hover {
+    transform: perspective(1000px) rotateX(-10deg) rotateY(10deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .palette-item img {
+    width: 90%;    /* Ensures the image fits within the square */
+    height: 90%;   /* Proportional size without distortion */
+    object-fit: contain; /* Maintains aspect ratio */
+  }
+  
+  .palette-item:hover img {
+    filter: brightness(1.1);
+  }
+
+
+.palette-item.selected {
+    border: 2px solid blue; /* Highlight the selected item */
+}
+
+
+
+
+/*---------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+
+
+@media ((min-width:0px) and (max-width: 500px)) {
+    .title {
+        font-size: 2em;
+    }
+
+    .input-box, .difficulty-btn, .action-btn, .start-btn {
+        font-size: 0.9em;
+    }
+
+    .difficulty-buttons, .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+
+    .rules-title {
+        font-size: 1em; /* Smaller title on small screens */
+    }
+
+    .rules-text {
+        font-size: 0.7em; /* Smaller font size for small screens */
+        padding-left: 5px; /* Less padding for bullets */
+    }
+
+    .rules-text ul {
+        padding-left: 10px; /* Less padding for nested lists */
+    }
+
+    .back-btn {
+        font-size: 0.7em; /* Smaller font size on small screens */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    .back-icon {
+        width: 20px; /* Smaller icon size */
+        height: 20px; /* Smaller icon size */
+    }
+}
+
+
+
+@media ((min-width:500px) and (max-width: 768px)) {
+    .rules-title {
+        font-size: 2em; /* Smaller title on medium screens */
+        
+    }
+
+    .rules-text {
+        font-size: 0.8em; /* Slightly smaller font for readability */
+        padding-left: 15px; /* Adjust left padding for bullets */
+    }
+
+    .rules-text ul {
+        padding-left: 30px; /* Adjust padding for nested lists */
+    }
+
+    .back-btn {
+        font-size: 1em; /* Adjust font size for medium screens */
+        padding: 10px 20px; /* Adjust padding */
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------After Win -----------------------------------------------*/
+.win-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Make sure it's above other content */
+}
+
+/* Win Content Styling */
+.win-content {
+    background: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.win-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.win-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+.playagain-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.playagain-btn:hover {
+    background-color: #218838;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 2; }
+}
+
+
+
+
+/* Rocket Animation */
+.rocket {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 40px;
+    background: linear-gradient(to top, red, orange);
+    border-radius: 5px;
+    transform-origin: center bottom;
+    animation: launchRocket 2.5s ease-out infinite;
+}
+
+.rocket:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.rocket:nth-child(3) { left: 50%; animation-delay: 1s; }
+.rocket:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.rocket:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+@keyframes launchRocket {
+    0% { bottom: 0; transform: translateX(0) rotate(0deg); opacity: 1; }
+    70% { bottom: 80%; opacity: 1; }
+    100% { bottom: 100%; transform: translateX(-5px) rotate(20deg); opacity: 0; }
+}
+
+/* Fireworks Animation */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#firework1 { background-color: yellow; left: 50%; top: 15%; animation: explode 1.5s ease-out infinite; }
+#firework2 { background-color: blue; left: 40%; top: 20%; animation: explode 1.5s ease-out infinite; animation-delay: 2s; }
+#firework3 { background-color: green; left: 60%; top: 18%; animation: explode 1.5s ease-out infinite; animation-delay: 2.5s; }
+#firework4 { background-color: pink; left: 70%; top: 25%; animation: explode 1.5s ease-out infinite; animation-delay: 3s; }
+#firework5 { background-color: red; left: 35%; top: 22%; animation: explode 1.5s ease-out infinite; animation-delay: 3.5s; }
+#firework6 { background-color: orange; left: 65%; top: 28%; animation: explode 1.5s ease-out infinite; animation-delay: 4s; }
+#firework7 { background-color: purple; left: 55%; top: 16%; animation: explode 1.5s ease-out infinite; animation-delay: 4.5s; }
+#firework8 { background-color: cyan; left: 45%; top: 30%; animation: explode 1.5s ease-out infinite; animation-delay: 5s; }
+
+@keyframes explode {
+    0% { width: 0; height: 0; opacity: 1; }
+    50% { width: 70px; height: 70px; opacity: 1; transform: scale(1.5); }
+    100% { width: 90px; height: 90px; opacity: 0; transform: scale(1); }
+}
+
+.leaderboard-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    padding: 30px;
+    width: 60%;
+    margin: 10% auto;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-family: 'Cinzel', serif;
+}
+
+.leaderboard-title {
+    font-size: 36px;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.leaderboard-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leaderboard-rank {
+    font-size: 28px;
+    color: gold;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.leaderboard-name {
+    flex-grow: 1;
+    text-align: left;
+    color: #ffdf00;
+    text-shadow: 1px 1px 4px rgba(255, 223, 0, 0.7);
+}
+
+.leaderboard-time {
+    font-size: 22px;
+    color: lightblue;
+}
+
+
+
+
