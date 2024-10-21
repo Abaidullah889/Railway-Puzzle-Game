@@ -1,7 +1,6 @@
 // DATA
 
 
-
 //EasyMaps
 
 const EasyMaps = [
@@ -45,567 +44,6 @@ const EasyMaps = [
         [{name:"empty"},{name:"mountain" , angle:180},{name:"empty"},{name:"empty"},{name:"empty"}]
     ]
 
-]
-
-//EasyMapsResults
-
-const EasyMapsResults = [
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-    [
-        [
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
 ]
 
 
@@ -667,1072 +105,6 @@ const HardMaps = [
 
 ]
 
-// HardMapsResults
-const HardMapsResults = 
-[
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "oasis"
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "mountain_curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-    ,
-
-    [
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "bridge_track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "oasis"
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "mountain_curve",
-                "angle": 180
-            },
-            {
-                "name": "track",
-                "angle": 0
-            },
-            {
-                "name": "bridge_track",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 0
-            },
-            {
-                "name": "curve",
-                "angle": 90
-            },
-            {
-                "name": "track",
-                "angle": 0
-            }
-        ],
-        [
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "track",
-                "angle": 90
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            },
-            {
-                "name": "curve",
-                "angle": 270
-            },
-            {
-                "name": "curve",
-                "angle": 180
-            }
-        ]
-    ]
-]
-
-
-
-
 const Button_Rules = document.querySelector(".action-btn");
 const Container_Menu = document.querySelector(".container");
 const Container_Rules = document.querySelector(".rules-container");
@@ -1781,6 +153,7 @@ let timerInterval = null;
 // Track the currently selected palette item
 let selectedPaletteItem = null;
 let selectedPaletteItemAngle = null;
+let selectedPaletteItemDirections = [];
 
 
 
@@ -1812,10 +185,11 @@ document.querySelectorAll('.palette-item').forEach(item => {
         // Set the selected item type based on the data-type attribute
         selectedPaletteItem = item.getAttribute('data-type');
 
-        if(selectedPaletteItem === "track" || selectedPaletteItem === "bridge" || selectedPaletteItem === "curve" )
+        if(selectedPaletteItem === "track" ||  selectedPaletteItem == "curve"  || selectedPaletteItem == "bridge_track")
         {
             console.log("here");
             selectedPaletteItemAngle = parseInt(item.getAttribute('id'));
+        
             console.log(selectedPaletteItemAngle);
         }
 
@@ -1846,32 +220,110 @@ Grid.addEventListener('click', function (e)
                 {
                     current_Map[row][col].name = selectedPaletteItem;
                     current_Map[row][col].angle = selectedPaletteItemAngle;
+                    current_Map[row][col].Directions = ["up","down"];
+
+
                 }
                 if(selectedPaletteItem == "curve")
                 {
                     current_Map[row][col].name = selectedPaletteItem;
                     current_Map[row][col].angle = selectedPaletteItemAngle;
+                    current_Map[row][col].Directions = ["right","down"];
                 }
                 break;
             case "bridge":
                 if(selectedPaletteItem == "bridge_track")
                 {
                     current_Map[row][col].name = selectedPaletteItem;
+                    current_Map[row][col].Directions = [];
+
+                    switch(current_Map[row][col].angle)
+                    {
+                        case 0:
+                            current_Map[row][col].Directions.push("up");
+                            current_Map[row][col].Directions.push("down");
+                            break;
+                        case 90:
+                            current_Map[row][col].Directions.push("left");
+                            current_Map[row][col].Directions.push("right");
+                            break;
+                    }
                 }
                 break;
             case "mountain":
                 if(selectedPaletteItem == "mountain_curve")
                 {
                     current_Map[row][col].name = selectedPaletteItem;
+                    current_Map[row][col].Directions = JSON.parse(JSON.stringify(selectedPaletteItemDirections));
+
+                    switch(current_Map[row][col].angle)
+                    {
+
+                        case 0:
+                            current_Map[row][col].Directions[0] = "right";
+                            current_Map[row][col].Directions[1] = "down";
+                            break;
+                        case 90:
+                            current_Map[row][col].Directions[0] = "down";
+                            current_Map[row][col].Directions[1] = "left";
+                            break;
+                        case 180:
+                            current_Map[row][col].Directions[0] = "left";
+                            current_Map[row][col].Directions[1] = "up";
+                            break;
+                        case 270:
+                            current_Map[row][col].Directions[0] = "up";
+                            current_Map[row][col].Directions[1] = "right";
+                            break;
+    
+                    }
+
                 }
                 break;
             case "track":
                 current_Map[row][col].angle =  current_Map[row][col].angle==0 ? 90 : 0;
+
+                switch(current_Map[row][col].angle)
+                    {
+                        case 0:
+                            current_Map[row][col].Directions[0] = "up";
+                            current_Map[row][col].Directions[1] = "down";
+                            break;
+                        case 90:
+                            current_Map[row][col].Directions[0] = "left";
+                            current_Map[row][col].Directions[1] = "right";
+                            break;
+
+
+                    }
+
                 break;
             case "curve":
                 let angle = current_Map[row][col].angle += 90;
                 angle = angle % 360;
                 console.log(angle);
+
+                switch(angle){
+
+                    case 0:
+                        current_Map[row][col].Directions[0] = "right";
+                        current_Map[row][col].Directions[1] = "down";
+                        break;
+                    case 90:
+                        current_Map[row][col].Directions[0] = "down";
+                        current_Map[row][col].Directions[1] = "left";
+                        break;
+                    case 180:
+                        current_Map[row][col].Directions[0] = "left";
+                        current_Map[row][col].Directions[1] = "up";
+                        break;
+                    case 270:
+                        current_Map[row][col].Directions[0] = "up";
+                        current_Map[row][col].Directions[1] = "right";
+                        break;
+
+                }
+
                 current_Map[row][col].angle = angle;
                 break;
             default:
@@ -1885,7 +337,7 @@ Grid.addEventListener('click', function (e)
 
     if(difficulty === "easy")
     {
-        if(isWin(EasyMapsResults[mapNumber],current_Map))
+        if(isWin(current_Map))
         {
             stopTimer();
             displayWinScreen();
@@ -1897,7 +349,7 @@ Grid.addEventListener('click', function (e)
     }
     else
     {
-        if(isWin(HardMapsResults[mapNumber],current_Map))
+        if(isWin(current_Map))
         {
             stopTimer();
             displayWinScreen();
@@ -1952,7 +404,6 @@ Grid.addEventListener('contextmenu',function(e)
 });
 
 ////////////////////////////////////////////////////////
-
 
 leaderboardBack_Button.addEventListener('click',function(){
     leaderboardContainer.classList.add('hidden');
@@ -2013,7 +464,6 @@ Button_LeaderBoard.addEventListener('click',function() {
 
 });
 
-
 Restart_Button.addEventListener('click', function() {
     resetButtonClicked = true;
     saveGameState();
@@ -2021,13 +471,11 @@ Restart_Button.addEventListener('click', function() {
 
 });
 
-
 PlayAgain_Button.addEventListener('click', function() {
     winScreen.classList.add('hidden');
     // Reset the game or reload the page to start over
     resetGame(); // You can define your own resetGame function
 });
-
 
 Button_Rules.addEventListener("click",function(e)
 {
@@ -2094,7 +542,6 @@ Hard_Button.addEventListener('click', function () {
     checkFormValidity();
     saveGameState();
 });
-
 
 function giveTile(obj)
 {
@@ -2199,46 +646,105 @@ function checkFormValidity()
     }
 }
 
-
 function randomly(a,b)
 {
   return Math.floor(Math.random()*(b-a+1)+a);
 }
 
-function isWin(resultMap, currMap) {
-    // Check if both arrays are of the same length
+function validPosition(currMap, row, col) {
+    return row >= 0 && row < currMap.length && col >= 0 && col < currMap[0].length;
+}
 
-    if (resultMap.length !== currMap.length) {
-        return false;
-    }
-
-    // Compare each row (sub-array) in both arrays
-    for (let i = 0; i < resultMap.length; i++) {
-        if (resultMap[i].length !== currMap[i].length) {
-            return false; // If rows are not the same length
-        }
-
-        // Compare each element in the row
-        for (let j = 0; j < resultMap[i].length; j++) {
-            // Check if the objects or values are the same
-            if (resultMap[i][j].name === currMap[i][j].name) 
-            {
-                if(current_Map.angle !== null)
-                {
-                    if(resultMap[i][j].angle !== currMap[i][j].angle)
-                        return false; // If any element doesn't match
-                }
-            }
-            else
+function allFilled(currMap)
+{
+    for(let i = 0; i < currMap.length; i++) {
+        for (let j = 0; j < currMap[i].length; j++) {
+            
+            if(currMap[i][j].name === "empty" || currMap[i][j].name === "mountain"  || currMap[i][j].name === "bridge")
             {
                 return false;
             }
-
         }
     }
 
-    // If all elements match, return true
     return true;
+}
+
+function oppositeDirection(direction) 
+{
+    const opposites = 
+    {
+        up: 'down',
+        down: 'up',
+        left: 'right',
+        right: 'left'
+    };
+
+    return opposites[direction];
+}
+
+function validTrackConnection(currMap, x, y) {
+    const cell = currMap[x][y];
+
+    if(cell.Directions)
+    {
+        for (const direction of cell.Directions) 
+            {
+                let neighbor;
+        
+                if (direction === 'up')
+                {
+                    neighbor = currMap[x - 1][y];
+                }               
+                else if (direction === 'down')
+                {
+                    neighbor = currMap[x + 1][y];
+                }        
+                else if (direction === 'left') 
+                {
+                    neighbor = currMap[x][y - 1];
+                }            
+                else if (direction === 'right')
+                {
+                    neighbor = currMap[x][y + 1];
+        
+                }
+        
+                if (!neighbor || !neighbor.Directions.includes(oppositeDirection(direction))) 
+                {
+                    return false;
+                }
+        
+            }
+
+    }
+    
+
+    return true;
+}
+
+function isWin(currMap) 
+{
+
+    if(allFilled(currMap))
+    {
+        for (let i = 0; i < currMap.length; i++) 
+        {
+            for (let j = 0; j < currMap[i].length; j++) 
+            {
+
+                if (!validTrackConnection(currMap, i, j)) {
+                    return false;
+                }
+                
+            }
+        }   
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 function displayWinScreen() {
@@ -2257,6 +763,7 @@ function resetGame() {
     mapNumber = randomly(0, 4);
     usernameFilled = false;
     routeDesigner = "";
+    selectedPaletteItem = "";
     current_Map = null;
     elapsedSeconds = 0;
     startButtonClicked = false;
@@ -2301,7 +808,6 @@ function startAnimations() {
         firework.style.animationDelay = `${index * 0.7 + Math.random()}s`;
     });
 }
-
 
 function saveGameState() {
     const gameState = 
@@ -2378,7 +884,6 @@ function loadGameState() {
                         console.log("wins");
                         
                     }
-            
                 }
                 else
                 {
@@ -2405,7 +910,6 @@ function loadGameState() {
     }
 
 }
-
 
 function startTimer() 
 {
