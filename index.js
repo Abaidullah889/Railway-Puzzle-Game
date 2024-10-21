@@ -330,12 +330,12 @@ const EasyMapsResults = [
                 "angle": 0
             },
             {
-                "name": "track",
-                "angle": 0
+                "name": "curve",
+                "angle": 270
             },
             {
-                "name": "track",
-                "angle": 0
+                "name": "curve",
+                "angle": 180
             }
         ],
         [
@@ -347,16 +347,16 @@ const EasyMapsResults = [
                 "name": "oasis"
             },
             {
-                "name": "track",
-                "angle": 0
+                "name": "curve",
+                "angle": 270
             },
             {
                 "name": "track",
-                "angle": 0
+                "angle": 90
             },
             {
-                "name": "track",
-                "angle": 0
+                "name": "curve",
+                "angle": 90
             }
         ],
         [
@@ -369,12 +369,12 @@ const EasyMapsResults = [
                 "angle": 90
             },
             {
-                "name": "curve",
-                "angle": 180
+                "name": "track",
+                "angle": 90
             },
             {
-                "name": "curve",
-                "angle": 270
+                "name": "track",
+                "angle": 90
             },
             {
                 "name": "mountain_curve",
