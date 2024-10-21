@@ -334,32 +334,14 @@ Grid.addEventListener('click', function (e)
 
     render(current_Map);
     saveGameState();
-
-    if(difficulty === "easy")
-    {
-        if(isWin(current_Map))
+    if(isWin(current_Map))
         {
             stopTimer();
             displayWinScreen();
             addWinner(routeDesigner,elapsedSeconds);
             console.log("wins");
             
-        }
-
-    }
-    else
-    {
-        if(isWin(current_Map))
-        {
-            stopTimer();
-            displayWinScreen();
-            addWinner(routeDesigner,elapsedSeconds);
-    
-        }
-
-    }
-
-    
+        }    
 
 });
 
@@ -875,28 +857,13 @@ function loadGameState() {
             render(current_Map);
             startTimer();
 
-            if(difficulty === "easy")
-                {
-                    if(isWin(EasyMapsResults[mapNumber],current_Map))
-                    {
-                        stopTimer();
-                        displayWinScreen();
-                        console.log("wins");
-                        
-                    }
-                }
-                else
-                {
-                    if(isWin(HardMapsResults[mapNumber],current_Map))
-                    {
-                        stopTimer();
-                        displayWinScreen();
-                
-                    }
-            
-                }
-    
-             // Show the game screen since the state has been restored
+            if(isWin(current_Map))
+            {
+                stopTimer();
+                displayWinScreen();
+                console.log("wins");
+                    
+            }
     
         } 
         else 
