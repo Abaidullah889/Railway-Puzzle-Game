@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6aa8f0cd38.js" crossorigin="anonymous"></script>
-    <audio id="background-music" src="background-sound.mp3" loop autoplay></audio>
 
     <title>Document</title>
 </head>
@@ -58,14 +57,13 @@
                     <li> Empty tiles</li>
                 </ul>
             </li>
-            <li>No specific requirements for placing railway elements exist, allowing for flexible gameplay.</li>
         </ul>
 
         <ul class="rules-text">
-            <li><strong>Clicking on Cells</strong>: Clicking on a cell cycles through the different element types, with options to rotate or delete using the right mouse button.</li>
-            <li><strong>Element Selection</strong>: After selecting a tile, elements can be chosen from a palette or switched between elements using the arrow keys.</li>
+            <li><strong>Right Clicking on Cells</strong>: With this event the track from the tile will be removed except the bridge and mountain tracks.</li>
+            <li><strong>Element Selection</strong>: There are four elements in the palette panel which can be placed over the tiles in the grid.</li>
             <li><strong>Drag and Drop</strong>: Elements can be dragged and dropped onto a tile from a palette.</li>
-            <li><strong>Drawing Railway Lines</strong>: The railway line is drawn by holding down the mouse button and moving across the cells (bonus points for this feature).</li>
+            <li><strong>Rotating Railway Lines</strong>: By using left click you can rotate the tracks over the tile.</li>
         </ul>
 
         <ul class="rules-text">
@@ -100,7 +98,7 @@
         
         </header>
         <div class="game-container">
-            <!-- Info Panel -->
+            
             <div class="info-panel">
                 <p>Route Designer:</p>
                 <p class="designer-name">TRICKLES</p>
@@ -108,54 +106,50 @@
                 <p>Elapsed Time:</p>
                 <p class="elapsed-time">00:00</p>
             </div>
-            <!-- Game Board -->
+            
             <div class="game-board">
                 <table class="grid">
-                    <!-- You would dynamically generate these rows and cells based on the grid size -->
-                    <!-- Example for a 7x7 grid -->
-            
-                    
-            
-                    <!-- Repeat for other rows -->
+
                 </table>
             </div>
-            <!-- Palette for Elements -->
+           
             <div class="palette">
                 <h3>Palette</h3>
-                <div class="palette-item" data-type="track" id="0">
+                <div class="palette-item" data-type="track" id="0" draggable="true">
                   <img src="straight_rail.png" alt="Track">
                 </div>
-                <div class="palette-item" data-type="bridge_track" id="0">
+                <div class="palette-item" data-type="bridge_track" id="0" draggable="true">
                   <img src="bridge_rail.png" alt="Bridge">
                 </div>
-                <div class="palette-item" data-type="mountain_curve">
+                <div class="palette-item" data-type="mountain_curve" draggable="true">
                   <img src="mountain_rail.png" alt="Mountain">
                 </div>
-                <div class="palette-item" data-type="curve" id="0">
+                <div class="palette-item" data-type="curve" id="0" draggable="true">
                   <img src="curve_rail.png" alt="Water">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Win Screen Modal -->
+    
     <div class="win-screen hidden">
         <div class="win-content">
             <h2>Congratulations!</h2>
             <p>You have completed the railway puzzle!</p>
+            <p class="completion-time">Completion Time: 00:00</p> <!-- New line for completion time -->
             <button class="playagain-btn">Play Again</button>
         </div>
 
-    <!-- Rocket and Fireworks Animations -->
+    
     <div class="fireworks">
-        <!-- Multiple Rockets -->
+        <!--Rockets -->
         <div class="rocket" id="rocket1"></div>
         <div class="rocket" id="rocket2"></div>
         <div class="rocket" id="rocket3"></div>
         <div class="rocket" id="rocket4"></div>
         <div class="rocket" id="rocket5"></div>
 
-        <!-- Multiple Fireworks -->
+        <!--Fireworks -->
         <div class="firework" id="firework1"></div>
         <div class="firework" id="firework2"></div>
         <div class="firework" id="firework3"></div>
@@ -171,7 +165,6 @@
     <div class="leaderboard-container hidden">
         <h2 class="leaderboard-title">🏆 Leaderboard 🏆</h2>
         <ul class="leaderboard-list">
-        <!-- The list of winners will be dynamically generated here -->
         </ul>
         <button id="leaderboard-back-btn" class="back-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="back-icon">

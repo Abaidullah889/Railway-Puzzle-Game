@@ -1,8 +1,4 @@
 // DATA
-
-
-//EasyMaps
-
 const EasyMaps = [
     [
         [{name:"empty"},{name:"mountain" , angle:90},{name:"empty"},{name:"empty"},{name:"oasis"}],
@@ -46,8 +42,6 @@ const EasyMaps = [
 
 ]
 
-
-// HardMaps
 const HardMaps = [
 
 
@@ -129,6 +123,9 @@ const Restart_Button = document.querySelector('.restart-btn');
 const leaderboardBack_Button = document.querySelector('#leaderboard-back-btn');
 
 
+let elapsedSeconds = 0;
+let timerInterval = null;
+
 
 let difficultySelected = false;
 let difficulty = "";
@@ -139,18 +136,7 @@ let current_Map = null;
 let startButtonClicked = false;
 let resetButtonClicked = false;
 
-/////////////////////////////////////////////////////////////////Time////////////////////////////////////////
 
-let elapsedSeconds = 0; // in seconds
-let timerInterval = null;
-
-
-
-/////////////////////////////// Placement /////////////////////////////////////////
-
-
-
-// Track the currently selected palette item
 let selectedPaletteItem = null;
 let selectedPaletteItemAngle = null;
 let selectedPaletteItemDirections = [];
@@ -165,183 +151,95 @@ let selectedPaletteItemDirections = [];
 // Functionality
 
 
+document.querySelectorAll('.palette-item').forEach(piece => {
 
-
-//////////////////////////////////Placement///////////////////////////////////////
-
-
-
-
-
-// Add event listeners to each palette item
-document.querySelectorAll('.palette-item').forEach(item => {
-    item.addEventListener('click', function () {
-        // Remove the 'selected' class from all items first
-        document.querySelectorAll('.palette-item').forEach(el => el.classList.remove('selected'));
+    piece.addEventListener('dragstart', function (e) {
         
-        // Add the 'selected' class to the clicked item
-        item.classList.add('selected');
         
-        // Set the selected item type based on the data-type attribute
-        selectedPaletteItem = item.getAttribute('data-type');
-
-        if(selectedPaletteItem === "track" ||  selectedPaletteItem == "curve"  || selectedPaletteItem == "bridge_track")
-        {
-            console.log("here");
-            selectedPaletteItemAngle = parseInt(item.getAttribute('id'));
-        
-            console.log(selectedPaletteItemAngle);
-        }
-
+        e.dataTransfer.setData('track_Type', piece.getAttribute('data-type'));
+        e.dataTransfer.setData('track_angle',piece.getAttribute('id'));
     });
 });
-
 
 
 Grid.addEventListener('click', function (e) 
 {
     const target = e.target.closest("td");
-    // Make sure the clicked element is a cell
-    if (target && selectedPaletteItem) 
+    if (target) 
     {
-        //console.log(e);
+        console.log(e);
         const row = e.target.closest("tr").getAttribute("id");
         const col = e.target.closest("td").getAttribute("id");
 
-        //console.log(row);
-        //console.log(col);
-        //console.log(selectedPaletteItem);
-
-        // Create a new image element based on the selected palette item
         switch (current_Map[row][col].name) 
-        {
-            case "empty":
-                if(selectedPaletteItem =="track")
                 {
-                    current_Map[row][col].name = selectedPaletteItem;
-                    current_Map[row][col].angle = selectedPaletteItemAngle;
-                    current_Map[row][col].Directions = ["up","down"];
+
+                    case "track":
+                        current_Map[row][col].angle =  current_Map[row][col].angle==0 ? 90 : 0;
+
+                        switch(current_Map[row][col].angle)
+                            {
+                                case 0:
+                                    current_Map[row][col].Directions[0] = "up";
+                                    current_Map[row][col].Directions[1] = "down";
+                                    break;
+                                case 90:
+                                    current_Map[row][col].Directions[0] = "left";
+                                    current_Map[row][col].Directions[1] = "right";
+                                    break;
 
 
+                            }
+
+                        break;
+                    case "curve":
+                        let angle = current_Map[row][col].angle += 90;
+                        angle = angle % 360;
+                        console.log(angle);
+
+                        switch(angle){
+
+                            case 0:
+                                current_Map[row][col].Directions[0] = "right";
+                                current_Map[row][col].Directions[1] = "down";
+                                break;
+                            case 90:
+                                current_Map[row][col].Directions[0] = "down";
+                                current_Map[row][col].Directions[1] = "left";
+                                break;
+                            case 180:
+                                current_Map[row][col].Directions[0] = "left";
+                                current_Map[row][col].Directions[1] = "up";
+                                break;
+                            case 270:
+                                current_Map[row][col].Directions[0] = "up";
+                                current_Map[row][col].Directions[1] = "right";
+                                break;
+
+                        }
+
+                        current_Map[row][col].angle = angle;
+                        break;
+                    default:
+                        console.log("Invalid palette item selected");
+                        return;
                 }
-                if(selectedPaletteItem == "curve")
+
+                render(current_Map);
+                saveGameState();      
+
+                if(isWin(current_Map))
                 {
-                    current_Map[row][col].name = selectedPaletteItem;
-                    current_Map[row][col].angle = selectedPaletteItemAngle;
-                    current_Map[row][col].Directions = ["right","down"];
-                }
-                break;
-            case "bridge":
-                if(selectedPaletteItem == "bridge_track")
-                {
-                    current_Map[row][col].name = selectedPaletteItem;
-                    current_Map[row][col].Directions = [];
+                    stopTimer();
+                    displayWinScreen();
+                    addWinner(routeDesigner,elapsedSeconds);
+                    console.log("wins");
+                
+                } 
 
-                    switch(current_Map[row][col].angle)
-                    {
-                        case 0:
-                            current_Map[row][col].Directions.push("up");
-                            current_Map[row][col].Directions.push("down");
-                            break;
-                        case 90:
-                            current_Map[row][col].Directions.push("left");
-                            current_Map[row][col].Directions.push("right");
-                            break;
-                    }
-                }
-                break;
-            case "mountain":
-                if(selectedPaletteItem == "mountain_curve")
-                {
-                    current_Map[row][col].name = selectedPaletteItem;
-                    current_Map[row][col].Directions = JSON.parse(JSON.stringify(selectedPaletteItemDirections));
-
-                    switch(current_Map[row][col].angle)
-                    {
-
-                        case 0:
-                            current_Map[row][col].Directions[0] = "right";
-                            current_Map[row][col].Directions[1] = "down";
-                            break;
-                        case 90:
-                            current_Map[row][col].Directions[0] = "down";
-                            current_Map[row][col].Directions[1] = "left";
-                            break;
-                        case 180:
-                            current_Map[row][col].Directions[0] = "left";
-                            current_Map[row][col].Directions[1] = "up";
-                            break;
-                        case 270:
-                            current_Map[row][col].Directions[0] = "up";
-                            current_Map[row][col].Directions[1] = "right";
-                            break;
-    
-                    }
-
-                }
-                break;
-            case "track":
-                current_Map[row][col].angle =  current_Map[row][col].angle==0 ? 90 : 0;
-
-                switch(current_Map[row][col].angle)
-                    {
-                        case 0:
-                            current_Map[row][col].Directions[0] = "up";
-                            current_Map[row][col].Directions[1] = "down";
-                            break;
-                        case 90:
-                            current_Map[row][col].Directions[0] = "left";
-                            current_Map[row][col].Directions[1] = "right";
-                            break;
-
-
-                    }
-
-                break;
-            case "curve":
-                let angle = current_Map[row][col].angle += 90;
-                angle = angle % 360;
-                console.log(angle);
-
-                switch(angle){
-
-                    case 0:
-                        current_Map[row][col].Directions[0] = "right";
-                        current_Map[row][col].Directions[1] = "down";
-                        break;
-                    case 90:
-                        current_Map[row][col].Directions[0] = "down";
-                        current_Map[row][col].Directions[1] = "left";
-                        break;
-                    case 180:
-                        current_Map[row][col].Directions[0] = "left";
-                        current_Map[row][col].Directions[1] = "up";
-                        break;
-                    case 270:
-                        current_Map[row][col].Directions[0] = "up";
-                        current_Map[row][col].Directions[1] = "right";
-                        break;
-
-                }
-
-                current_Map[row][col].angle = angle;
-                break;
-            default:
-                console.log("Invalid palette item selected");
-                return;
-        }
     }
 
-    render(current_Map);
-    saveGameState();
-    if(isWin(current_Map))
-        {
-            stopTimer();
-            displayWinScreen();
-            addWinner(routeDesigner,elapsedSeconds);
-            console.log("wins");
-            
-        }    
+  
 
 });
 
@@ -385,7 +283,7 @@ Grid.addEventListener('contextmenu',function(e)
 
 });
 
-////////////////////////////////////////////////////////
+
 
 leaderboardBack_Button.addEventListener('click',function(){
     leaderboardContainer.classList.add('hidden');
@@ -404,17 +302,17 @@ Button_LeaderBoard.addEventListener('click',function() {
 
         const listItem = document.createElement('li');
 
-        // Create leaderboard rank element
+
         const rankSpan = document.createElement('span');
         rankSpan.classList.add('leaderboard-rank');
         rankSpan.textContent = `#${index + 1}`;
 
-        // Create leaderboard name element
+  
         const nameSpan = document.createElement('span');
         nameSpan.classList.add('leaderboard-name');
         nameSpan.textContent = entry.name;
 
-        // Create leaderboard time element
+       
         const timeSpan = document.createElement('span');
         timeSpan.classList.add('leaderboard-time');
 
@@ -423,13 +321,13 @@ Button_LeaderBoard.addEventListener('click',function() {
         const minutes = Math.floor(time / 60);
         const seconds = time % 60;
 
-        // Format time as MM:SS (leading zero for seconds if needed)
+ 
         const ftime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
         timeSpan.textContent = ftime;
 
 
-        // Append rank, name, and time to the list item
+
         listItem.appendChild(rankSpan);
         listItem.appendChild(nameSpan);
         listItem.appendChild(timeSpan);
@@ -455,8 +353,7 @@ Restart_Button.addEventListener('click', function() {
 
 PlayAgain_Button.addEventListener('click', function() {
     winScreen.classList.add('hidden');
-    // Reset the game or reload the page to start over
-    resetGame(); // You can define your own resetGame function
+    resetGame();
 });
 
 Button_Rules.addEventListener("click",function(e)
@@ -476,7 +373,6 @@ Button_Start.addEventListener("click",function(e)
     Container_Menu.classList.add("hidden");
     Container_Rules.classList.add("hidden");
     Container_Game.classList.remove("hidden");
-    //console.log(mapNumber);
     startButtonClicked = true;
     if(difficulty === "easy")
     {
@@ -487,7 +383,6 @@ Button_Start.addEventListener("click",function(e)
         current_Map=JSON.parse(JSON.stringify(HardMaps[mapNumber]));
     }
 
-    //current_Map = EasyMapsResult3;
     divRouteDesigner.textContent = routeDesigner;
     render(current_Map);
     saveGameState();
@@ -495,7 +390,6 @@ Button_Start.addEventListener("click",function(e)
     
 })
 
-// Check if the username field is filled
 usernameInput.addEventListener('input', function () {
     usernameFilled = usernameInput.value.trim() !== '';
     if(usernameFilled)
@@ -538,14 +432,14 @@ function giveTile(obj)
         case "mountain":
             image.src="mountain.png";
             image.alt="mountain";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
             break;
         case "bridge":
             image.src="bridge.png";
             image.alt="bridge";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
             break;
@@ -556,7 +450,7 @@ function giveTile(obj)
         case "track":
             image.src="straight_rail.png";
             image.alt="straight_rail";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
 
@@ -564,21 +458,21 @@ function giveTile(obj)
         case "bridge_track":
             image.src="bridge_rail.png";
             image.alt="bridge_rail";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
             break;
         case "mountain_curve":
             image.src="mountain_rail.png";
             image.alt="mountain_rail";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
             break;
         case "curve":
             image.src="curve_rail.png";
             image.alt="curve_rail";
-            if (obj.angle !== undefined) { // Ensure angle exists
+            if (obj.angle !== undefined) { 
                 image.style.transform = `rotate(${obj.angle}deg)`;
             }
             break;
@@ -598,7 +492,6 @@ function render(map)
 {
     console.log("Current Map : ",current_Map);
     saveGameState();
-    //console.log("EasyMap : " , EasyMapsResult3);
     Grid.innerHTML="";
     for(let i=0;i<map.length;i++)
     {
@@ -616,6 +509,7 @@ function render(map)
         Grid.appendChild(tr);
     }
 
+    addDragAndDropListeners();
 }
 
 function checkFormValidity() 
@@ -730,16 +624,21 @@ function isWin(currMap)
 }
 
 function displayWinScreen() {
-
     winScreen.classList.remove('hidden');
     startAnimations();
     
+    // Calculate the time in minutes and seconds format
+    const minutes = Math.floor(elapsedSeconds / 60);
+    const seconds = elapsedSeconds % 60;
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    // Set the text content for completion time in the win screen
+    document.querySelector('.completion-time').textContent = `Completion Time: ${formattedTime}`;
 }
 
 function resetGame() {
 
     localStorage.removeItem('gameState');
-    // Reset difficulty-related variables
     difficultySelected = false;
     difficulty = "";
     mapNumber = randomly(0, 4);
@@ -751,36 +650,31 @@ function resetGame() {
     startButtonClicked = false;
     stopTimer();
     
-
-    // Clear username input
     usernameInput.value = "";
 
-    // Reset the difficulty button styles
+
     Easy_Button.classList.remove('selected');
     Hard_Button.classList.remove('selected');
 
-    // Disable the start button until both conditions are met
+
     Button_Start.disabled = true;
 
-    // Hide game screen and win screen
+
     Container_Game.classList.add('hidden');
     winScreen.classList.add('hidden');
 
-    // Show the main menu screen
     Container_Menu.classList.remove('hidden');
     document.querySelector('.elapsed-time').textContent = '00:00';
     localStorage.removeItem('gameState'); 
 }
 
-// Function to start rocket and firework animations
 function startAnimations() {
     const rockets = document.querySelectorAll('.rocket');
     const fireworks = document.querySelectorAll('.firework');
 
     stopTimer();
 
-    // Animate rockets and fireworks with randomized timings for variety
-    rockets.forEach((rocket, index) => {
+    rockets.forEach((rocket) => {
         rocket.style.animationPlayState = 'running';
         rocket.style.animationDelay = `${Math.random() * 1.5}s`;
     });
@@ -813,17 +707,13 @@ function saveGameState() {
 }
 
 function loadGameState() {
-    // Get the saved game state from localStorage
     const savedState = localStorage.getItem('gameState');
     const gameState = JSON.parse(savedState);
     console.log("here");
 
     if (gameState && !gameState.resetButtonClicked) {
         console.log("there");
-        // Parse the saved state back into an object
-        
 
-        // Restore the game's state using the loaded data
         difficultySelected = gameState.difficultySelected;
         difficulty = gameState.difficulty;
         mapNumber = gameState.mapNumber;
@@ -835,8 +725,6 @@ function loadGameState() {
         elapsedSeconds = gameState.elapsedSeconds || 0;
         startButtonClicked = gameState.startButtonClicked;
 
-
-        // Restore the username and difficulty on the UI
         usernameInput.value = routeDesigner;
         if (difficulty === "easy") {
             Easy_Button.classList.add('selected');
@@ -844,10 +732,9 @@ function loadGameState() {
             Hard_Button.classList.add('selected');
         }
         divRouteDesigner.textContent = routeDesigner;
-        // If both username and difficulty are set, enable the start button
+
         checkFormValidity();
 
-        // Render the restored map on the grid
         if(startButtonClicked === true)
         {
             console.log("here I am");
@@ -868,7 +755,7 @@ function loadGameState() {
         } 
         else 
         {
-            // If no saved state is found, show the main menu
+
             
             
             resetGame();
@@ -886,19 +773,18 @@ function startTimer()
     {
         clearInterval(timerInterval);
     }
-    
-    // Use setInterval to update every second (1000ms)
+
     timerInterval = setInterval(() => {
         elapsedSeconds++;
 
-        // Calculate minutes and seconds
+
         const minutes = Math.floor(elapsedSeconds / 60);
         const seconds = elapsedSeconds % 60;
 
-        // Format time as MM:SS (leading zero for seconds if needed)
+
         const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         
-        // Update the display
+
         timeDisplay.textContent = formattedTime;
         console.log(elapsedSeconds);
         saveGameState();
@@ -924,5 +810,181 @@ function addWinner(winnerName , time){
 }
 
 
-//
+
 loadGameState();
+
+
+
+
+
+
+
+
+
+
+
+
+function addDragAndDropListeners() 
+{
+
+    document.querySelectorAll('.grid td').forEach(cell => {
+        cell.addEventListener('dragover', function(e) {
+            e.preventDefault(); 
+            this.classList.add('drag-over');
+        });
+
+        cell.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.classList.remove('drag-over');
+        });
+
+        cell.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('drag-over');
+
+            // Retrieve the dropped item’s data
+            const selectedPaletteItem = e.dataTransfer.getData('track_Type');
+            const selectedPaletteItemAngle = parseInt(e.dataTransfer.getData('track_angle'));
+
+            console.log("Dropped:", selectedPaletteItem, "Angle:", selectedPaletteItemAngle);  // For debugging
+
+            if (selectedPaletteItem) {
+
+                const row = e.target.closest("tr").getAttribute("id");
+                const col = e.target.closest("td").getAttribute("id");
+
+
+                switch (current_Map[row][col].name) 
+                {
+                    case "empty":
+                        if(selectedPaletteItem =="track")
+                        {
+                            current_Map[row][col].name = selectedPaletteItem;
+                            current_Map[row][col].angle = selectedPaletteItemAngle;
+                            current_Map[row][col].Directions = ["up","down"];
+
+
+                        }
+                        if(selectedPaletteItem == "curve")
+                        {
+                            current_Map[row][col].name = selectedPaletteItem;
+                            current_Map[row][col].angle = selectedPaletteItemAngle;
+                            current_Map[row][col].Directions = ["right","down"];
+                        }
+                        break;
+                    case "bridge":
+                        if(selectedPaletteItem == "bridge_track")
+                        {
+                            current_Map[row][col].name = selectedPaletteItem;
+                            current_Map[row][col].Directions = [];
+
+                            switch(current_Map[row][col].angle)
+                            {
+                                case 0:
+                                    current_Map[row][col].Directions.push("up");
+                                    current_Map[row][col].Directions.push("down");
+                                    break;
+                                case 90:
+                                    current_Map[row][col].Directions.push("left");
+                                    current_Map[row][col].Directions.push("right");
+                                    break;
+                            }
+                        }
+                        break;
+                    case "mountain":
+                    if(selectedPaletteItem == "mountain_curve")
+                    {
+                        current_Map[row][col].name = selectedPaletteItem;
+                        current_Map[row][col].Directions = JSON.parse(JSON.stringify(selectedPaletteItemDirections));
+
+                        switch(current_Map[row][col].angle)
+                        {
+
+                            case 0:
+                                current_Map[row][col].Directions[0] = "right";
+                                current_Map[row][col].Directions[1] = "down";
+                                break;
+                            case 90:
+                                current_Map[row][col].Directions[0] = "down";
+                                current_Map[row][col].Directions[1] = "left";
+                                break;
+                            case 180:
+                                current_Map[row][col].Directions[0] = "left";
+                                current_Map[row][col].Directions[1] = "up";
+                                break;
+                            case 270:
+                                current_Map[row][col].Directions[0] = "up";
+                                current_Map[row][col].Directions[1] = "right";
+                                break;
+        
+                        }
+
+                    }
+                    break;
+                    case "track":
+                        current_Map[row][col].angle =  current_Map[row][col].angle==0 ? 90 : 0;
+
+                        switch(current_Map[row][col].angle)
+                            {
+                                case 0:
+                                    current_Map[row][col].Directions[0] = "up";
+                                    current_Map[row][col].Directions[1] = "down";
+                                    break;
+                                case 90:
+                                    current_Map[row][col].Directions[0] = "left";
+                                    current_Map[row][col].Directions[1] = "right";
+                                    break;
+
+
+                            }
+
+                        break;
+                    case "curve":
+                        let angle = current_Map[row][col].angle += 90;
+                        angle = angle % 360;
+                        console.log(angle);
+
+                        switch(angle){
+
+                            case 0:
+                                current_Map[row][col].Directions[0] = "right";
+                                current_Map[row][col].Directions[1] = "down";
+                                break;
+                            case 90:
+                                current_Map[row][col].Directions[0] = "down";
+                                current_Map[row][col].Directions[1] = "left";
+                                break;
+                            case 180:
+                                current_Map[row][col].Directions[0] = "left";
+                                current_Map[row][col].Directions[1] = "up";
+                                break;
+                            case 270:
+                                current_Map[row][col].Directions[0] = "up";
+                                current_Map[row][col].Directions[1] = "right";
+                                break;
+
+                        }
+
+                        current_Map[row][col].angle = angle;
+                        break;
+                    default:
+                        console.log("Invalid palette item selected");
+                        return;
+                }
+
+                render(current_Map);
+                saveGameState();      
+
+                if(isWin(current_Map))
+                {
+                    stopTimer();
+                    displayWinScreen();
+                    addWinner(routeDesigner,elapsedSeconds);
+                    console.log("wins");
+                
+                }  
+
+            }
+        });
+    });
+}

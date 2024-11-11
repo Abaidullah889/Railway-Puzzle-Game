@@ -179,19 +179,19 @@ body {
 
 
 .rules-container {
-    background-color: rgba(255, 255, 255, 0.5); /* Same transparent background */
-    backdrop-filter: blur(50px); /* Same blur effect */
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(50px); 
     border-radius: 10px;
-    padding: 5%; /* Adjust padding */
+    padding: 5%; 
     margin: auto;
     width: 100%;
 
     text-align: top;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Same shadow effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .rules-title {
-    font-size: 2.5em; /* Responsive size */
+    font-size: 2.5em; 
     text-align: left;
     color: #c5a05b;
     margin-bottom: 10px;
@@ -200,19 +200,19 @@ body {
 }
 
 .rules-text {
-    font-size: 1em; /* Base font size */
+    font-size: 1em;
     color: #333;
     font-family: Cinzel;
     font-weight: bold;
-    line-height: 1.5; /* Improve readability */
-    list-style-type: disc; /* Use bullet points */
-    text-align: left; /* Align text to the left */
-    padding-left: 20px; /* Add padding for bullet points */
+    line-height: 1.5; 
+    list-style-type: disc; 
+    text-align: left; 
+    padding-left: 20px; 
 }
 
 .rules-text ul {
-    margin-top: 10px; /* Space between main bullet and sub-bullets */
-    padding-left: 40px; /* Increase padding to indent the inner list */
+    margin-top: 10px; 
+    padding-left: 40px;
     margin-bottom: 10px;
 }
 
@@ -220,29 +220,29 @@ body {
 .back-btn {
     display: flex;
     align-items: center;
-    padding: 12px 24px; /* Ample padding for a larger click area */
+    padding: 12px 24px;
     margin:auto;
     border: none;
-    border-radius: 20px; /* More rounded corners for a modern look */
-    background-color: #c5a05b; /* Main background color */
-    color: white; /* Text color */
-    font-family: Cinzel, serif; /* Font style */
-    font-size: 1.2em; /* Larger font size */
+    border-radius: 20px;
+    background-color: #c5a05b;
+    color: white; 
+    font-family: Cinzel, serif;
+    font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border: 2px solid transparent; /* Transparent border to avoid shift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: 2px solid transparent; 
 }
 
 .back-btn:hover {
-    background-color: #a78d3e; /* Darker shade on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #a78d3e;
+    transform: translateY(-2px);
 }
 
 .back-icon {
-    width: 24px; /* Width of the icon */
-    height: 24px; /* Height of the icon */
-    margin-right: 0px; /* Space between icon and text */
+    width: 24px; 
+    height: 24px;
+    margin-right: 0px;
 }
 
 
@@ -316,73 +316,58 @@ body {
 
 
 
-
-
-/* Game Container */
 .game-container {
     display: flex;
     justify-content: space-between;
 }
 
 
-
-
-
-
-/* Styling for the Info Panel */
 .info-panel {
     width: 25%;
     background-color: #fff;
     padding: 20px;
-    border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
-    border: 2px solid #d8c3a5; /* Light border to match the design */
-    text-align: center; /* Center align text */
-    font-family: 'Cinzel', serif; /* Matching the font family */
-    color: #333; /* Default text color */
+    border-radius: 15px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #d8c3a5; 
+    text-align: center;
+    font-family: 'Cinzel', serif; 
+    color: #333; 
 }
 
-/* General Text Style */
 .info-panel p {
     margin: 0;
     padding: 10px 0;
     font-size: 1em;
-    color: #6e491f; /* Darker shade for subtle contrast */
-    text-transform: uppercase; /* Making text uppercase for a uniform style */
+    color: #6e491f;
+    text-transform: uppercase; 
     font-weight: bold;
 }
 
 /* Styling for Specific Text */
 .info-panel .designer-name {
-    font-size: 1.5em; /* Larger font for emphasis */
+    font-size: 1.5em; 
     font-weight: 700;
     margin: 10px 0;
-    color: #302b27; /* Darker shade to make it pop */
+    color: #302b27;
 }
 
 .info-panel .elapsed-time {
-    font-size: 2em; /* Larger size for visual emphasis */
+    font-size: 2em; 
     font-weight: 700;
     margin-top: 5px;
-    color: #302b27; /* Same color as the designer name */
+    color: #302b27; 
 }
 
-/* Adding a subtle divider */
 .info-panel .divider {
-    width: 80%; /* Relative width */
-    margin: 10px auto; /* Centered */
-    height: 1px; /* Thin line */
-    background-color: #d8c3a5; /* Soft color matching the border */
+    width: 80%; 
+    margin: 10px auto; 
+    height: 1px;
+    background-color: #d8c3a5; 
 }
 
 
 
 
-
-
-
-
-/* Game Board */
 .game-board {
     width: 50%;
     display: flex;
@@ -392,38 +377,38 @@ body {
     border-radius: 10px;
 }
 
-/* Table Grid */
+
 .grid 
 {
     width: 100%;
-    border-collapse: collapse; /* Removes gaps between table cells */
-    border-spacing: 0; /* Ensures no space between cells */
-    border: none; /* Remove any outer borders */
-    padding: 0; /* No padding */
-    margin: 0; /* No margin */
+    border-collapse: collapse;
+    border-spacing: 0; 
+    border: none; 
+    padding: 0; 
+    margin: 0; 
 }
 
 /* Grid Cells */
 .cell 
 {
-    background-color: transparent; /* Optional: transparent background for a cleaner look */
-    aspect-ratio:1/ 1; /* Ensures cells are perfect squares */
-    padding: 0; /* No padding inside cells */
-    margin: 0;  /* No extra margin */
-    cursor: default; /* Normal cursor */
-    border: none; /* No borders between cells */
-    width: auto; /* Ensures cells adjust automatically */
+    background-color: transparent;
+    aspect-ratio:1/ 1; 
+    padding: 0; 
+    margin: 0;
+    cursor: default;
+    border: none;
+    width: auto; 
     height: auto;
     overflow: hidden;
 }
 
 
-/* Images within Grid Cells */
+
 .cell img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the entire image is visible without distortion */
+    object-fit: contain; 
 }
 
 
@@ -433,11 +418,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px;  /* Adjusted to fit square buttons nicely */
+    width: 220px; 
     background-color: #fff;
-    border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
-    border: 2px solid #d8c3a5; /* Light border to match the design */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #d8c3a5;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -452,8 +437,8 @@ body {
   }
   
   .palette-item {
-    width: 100px;    /* Square dimensions */
-    height: 100px;   /* Square dimensions */
+    width: 100px;   
+    height: 100px;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,9 +457,9 @@ body {
   }
   
   .palette-item img {
-    width: 90%;    /* Ensures the image fits within the square */
-    height: 90%;   /* Proportional size without distortion */
-    object-fit: contain; /* Maintains aspect ratio */
+    width: 90%; 
+    height: 90%; 
+    object-fit: contain; 
   }
   
   .palette-item:hover img {
@@ -483,7 +468,7 @@ body {
 
 
 .palette-item.selected {
-    border: 2px solid blue; /* Highlight the selected item */
+    border: 2px solid blue;
 }
 
 
@@ -524,26 +509,26 @@ body {
 
 
     .rules-title {
-        font-size: 1em; /* Smaller title on small screens */
+        font-size: 1em;
     }
 
     .rules-text {
-        font-size: 0.7em; /* Smaller font size for small screens */
-        padding-left: 5px; /* Less padding for bullets */
+        font-size: 0.7em;
+        padding-left: 5px;
     }
 
     .rules-text ul {
-        padding-left: 10px; /* Less padding for nested lists */
+        padding-left: 10px;
     }
 
     .back-btn {
-        font-size: 0.7em; /* Smaller font size on small screens */
-        padding: 8px 16px; /* Adjust padding */
+        font-size: 0.7em; 
+        padding: 8px 16px; 
     }
 
     .back-icon {
-        width: 20px; /* Smaller icon size */
-        height: 20px; /* Smaller icon size */
+        width: 20px; 
+        height: 20px; 
     }
 }
 
@@ -551,22 +536,21 @@ body {
 
 @media ((min-width:500px) and (max-width: 768px)) {
     .rules-title {
-        font-size: 2em; /* Smaller title on medium screens */
-        
+        font-size: 2em; 
     }
 
     .rules-text {
-        font-size: 0.8em; /* Slightly smaller font for readability */
-        padding-left: 15px; /* Adjust left padding for bullets */
+        font-size: 0.8em; 
+        padding-left: 15px;
     }
 
     .rules-text ul {
-        padding-left: 30px; /* Adjust padding for nested lists */
+        padding-left: 30px;
     }
 
     .back-btn {
-        font-size: 1em; /* Adjust font size for medium screens */
-        padding: 10px 20px; /* Adjust padding */
+        font-size: 1em;
+        padding: 10px 20px;
 
     }
 
@@ -586,16 +570,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Make sure it's above other content */
+    z-index: 1000;
 }
 
-/* Win Content Styling */
+
 .win-content {
-    background: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
@@ -742,5 +726,15 @@ body {
 }
 
 
+.grid td.drag-over {
+    outline: 2px solid #a2916b;          
+    outline-offset: -2px;
+} 
 
 
+.completion-time {
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1.5rem;
+}
