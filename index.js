@@ -167,7 +167,6 @@ Grid.addEventListener('click', function (e)
     const target = e.target.closest("td");
     if (target) 
     {
-        console.log(e);
         const row = e.target.closest("tr").getAttribute("id");
         const col = e.target.closest("td").getAttribute("id");
 
@@ -195,7 +194,7 @@ Grid.addEventListener('click', function (e)
                     case "curve":
                         let angle = current_Map[row][col].angle += 90;
                         angle = angle % 360;
-                        console.log(angle);
+                      
 
                         switch(angle){
 
@@ -490,7 +489,6 @@ function giveTile(obj)
 
 function render(map)
 {
-    console.log("Current Map : ",current_Map);
     saveGameState();
     Grid.innerHTML="";
     for(let i=0;i<map.length;i++)
@@ -625,7 +623,6 @@ function isWin(currMap)
 
 function displayWinScreen() {
     winScreen.classList.remove('hidden');
-    startAnimations();
     
     // Calculate the time in minutes and seconds format
     const minutes = Math.floor(elapsedSeconds / 60);
@@ -668,22 +665,6 @@ function resetGame() {
     localStorage.removeItem('gameState'); 
 }
 
-function startAnimations() {
-    const rockets = document.querySelectorAll('.rocket');
-    const fireworks = document.querySelectorAll('.firework');
-
-    stopTimer();
-
-    rockets.forEach((rocket) => {
-        rocket.style.animationPlayState = 'running';
-        rocket.style.animationDelay = `${Math.random() * 1.5}s`;
-    });
-
-    fireworks.forEach((firework, index) => {
-        firework.style.animationPlayState = 'running';
-        firework.style.animationDelay = `${index * 0.7 + Math.random()}s`;
-    });
-}
 
 function saveGameState() {
     const gameState = 
@@ -709,10 +690,8 @@ function saveGameState() {
 function loadGameState() {
     const savedState = localStorage.getItem('gameState');
     const gameState = JSON.parse(savedState);
-    console.log("here");
 
     if (gameState && !gameState.resetButtonClicked) {
-        console.log("there");
 
         difficultySelected = gameState.difficultySelected;
         difficulty = gameState.difficulty;
@@ -737,7 +716,6 @@ function loadGameState() {
 
         if(startButtonClicked === true)
         {
-            console.log("here I am");
             Container_Menu.classList.add('hidden');
             Container_Rules.classList.add('hidden');
             Container_Game.classList.remove('hidden');
@@ -755,9 +733,6 @@ function loadGameState() {
         } 
         else 
         {
-
-            
-            
             resetGame();
         }
 
@@ -786,10 +761,9 @@ function startTimer()
         
 
         timeDisplay.textContent = formattedTime;
-        console.log(elapsedSeconds);
         saveGameState();
 
-    }, 1000); // 1 second interval
+    }, 1000);
 } 
 
 function stopTimer() {
@@ -842,11 +816,9 @@ function addDragAndDropListeners()
             e.preventDefault();
             this.classList.remove('drag-over');
 
-            // Retrieve the dropped item’s data
             const selectedPaletteItem = e.dataTransfer.getData('track_Type');
             const selectedPaletteItemAngle = parseInt(e.dataTransfer.getData('track_angle'));
 
-            console.log("Dropped:", selectedPaletteItem, "Angle:", selectedPaletteItemAngle);  // For debugging
 
             if (selectedPaletteItem) {
 
@@ -942,7 +914,7 @@ function addDragAndDropListeners()
                     case "curve":
                         let angle = current_Map[row][col].angle += 90;
                         angle = angle % 360;
-                        console.log(angle);
+                    
 
                         switch(angle){
 
@@ -980,8 +952,6 @@ function addDragAndDropListeners()
                     stopTimer();
                     displayWinScreen();
                     addWinner(routeDesigner,elapsedSeconds);
-                    console.log("wins");
-                
                 }  
 
             }

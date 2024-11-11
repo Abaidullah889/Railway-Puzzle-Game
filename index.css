@@ -622,53 +622,6 @@ body {
 
 
 
-/* Rocket Animation */
-.rocket {
-    position: absolute;
-    bottom: 0;
-    width: 10px;
-    height: 40px;
-    background: linear-gradient(to top, red, orange);
-    border-radius: 5px;
-    transform-origin: center bottom;
-    animation: launchRocket 2.5s ease-out infinite;
-}
-
-.rocket:nth-child(2) { left: 30%; animation-delay: 0.5s; }
-.rocket:nth-child(3) { left: 50%; animation-delay: 1s; }
-.rocket:nth-child(4) { left: 70%; animation-delay: 1.5s; }
-.rocket:nth-child(5) { left: 90%; animation-delay: 2s; }
-
-@keyframes launchRocket {
-    0% { bottom: 0; transform: translateX(0) rotate(0deg); opacity: 1; }
-    70% { bottom: 80%; opacity: 1; }
-    100% { bottom: 100%; transform: translateX(-5px) rotate(20deg); opacity: 0; }
-}
-
-/* Fireworks Animation */
-.firework {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    opacity: 0;
-}
-
-#firework1 { background-color: yellow; left: 50%; top: 15%; animation: explode 1.5s ease-out infinite; }
-#firework2 { background-color: blue; left: 40%; top: 20%; animation: explode 1.5s ease-out infinite; animation-delay: 2s; }
-#firework3 { background-color: green; left: 60%; top: 18%; animation: explode 1.5s ease-out infinite; animation-delay: 2.5s; }
-#firework4 { background-color: pink; left: 70%; top: 25%; animation: explode 1.5s ease-out infinite; animation-delay: 3s; }
-#firework5 { background-color: red; left: 35%; top: 22%; animation: explode 1.5s ease-out infinite; animation-delay: 3.5s; }
-#firework6 { background-color: orange; left: 65%; top: 28%; animation: explode 1.5s ease-out infinite; animation-delay: 4s; }
-#firework7 { background-color: purple; left: 55%; top: 16%; animation: explode 1.5s ease-out infinite; animation-delay: 4.5s; }
-#firework8 { background-color: cyan; left: 45%; top: 30%; animation: explode 1.5s ease-out infinite; animation-delay: 5s; }
-
-@keyframes explode {
-    0% { width: 0; height: 0; opacity: 1; }
-    50% { width: 70px; height: 70px; opacity: 1; transform: scale(1.5); }
-    100% { width: 90px; height: 90px; opacity: 0; transform: scale(1); }
-}
-
 .leaderboard-container {
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #ddd;
