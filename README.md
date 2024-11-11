@@ -33,4 +33,3 @@ Bonus Tasks (5 points)
 
   - [X] Saving: The game state can be saved and restored (1 point)
   - [X] Saving: Leaderboards are stored in LocalStorage (2 points)
-  - [ ] Element Placement: Drawing paths by holding down the mouse button and dragging across cells (2 points)
